@@ -23,10 +23,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m flit install -s --env --deps=develop --symlink
-    - name: Test and coverage
+    - name: Test
       run: |
         make test
-        make coverage
     - name: Format
       run: |
         make format
@@ -39,6 +38,3 @@ jobs:
     - name: Type_check
       run: |
         make type-check
-    - name: Coverage Badge
-      run: |
-        coverage-badge -f -o coverage.svg
