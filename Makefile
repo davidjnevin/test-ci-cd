@@ -2,7 +2,7 @@ PACKAGE_NAME=chatcleaner
 VENV_FOLDER=.venv
 LAUNCH_IN_VENV=source ${VENV_FOLDER}/bin/activate &&
 PYTHON_VERSION=python3.11
-PYTHON=./.venv/bin/python
+PYTHON=python3
 
 PHONY = help install install-dev test format lint type-check secure
 
@@ -16,6 +16,7 @@ help:
 setup:
 	rm -rf ${VENV_FOLDER}
 	${PYTHON_VERSION} -m venv ${VENV_FOLDER}
+	${LAUNCH_IN_VENV} pip install --upgrade pip
 	${LAUNCH_IN_VENV} pip install flit
 
 # target: install - Install the project locally
