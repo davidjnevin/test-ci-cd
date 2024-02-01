@@ -40,5 +40,4 @@ jobs:
         make type-check
     - name: Coverage Badge
       run: |
-        rm coverage.svg
-        coverage-badge -o coverage.svg
+        coverage-badge -f -o coverage.svg
