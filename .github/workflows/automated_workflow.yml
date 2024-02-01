@@ -17,14 +17,13 @@ jobs:
     - name: Pip upgrade
       run: |
         pip install --upgrade pip
-        pip install coverage coverage-badge
     - name: Install flit
       run: |
         pip install flit
     - name: Install dependencies
       run: |
         python -m flit install -s --env --deps=develop --symlink
-    - name: Test
+    - name: Test and coverage
       run: |
         make test
     - name: Format
@@ -39,8 +38,7 @@ jobs:
     - name: Type_check
       run: |
         make type-check
-    - name: Coverage
-      run: |
-        make coverage
     - name: Coverage Badge
-      run: coverage-badge -o coverage.svg
+      run: |
+        rm coverage.svg
+        coverage-badge -o coverage.svg
