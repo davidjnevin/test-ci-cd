@@ -26,6 +26,7 @@ jobs:
     - name: Test and coverage
       run: |
         make test
+        make coverage
     - name: Format
       run: |
         make format
