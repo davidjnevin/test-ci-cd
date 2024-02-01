@@ -6,20 +6,24 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.9
+    - name: Set up Python 3.9 - 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: ${{ matrix.python-version }}
         cache: 'pip' # caching pip dependencies
     - name: Pip upgrade
       run: |
         pip install --upgrade pip
     - name: Install flit
       run: |
-        pip install flit
+        pip install flit==3.9.0
     - name: Install dependencies
       run: |
         python -m flit install -s --env --deps=develop --symlink
@@ -38,3 +42,6 @@ jobs:
     - name: Type_check
       run: |
         make type-check
+    - name: Tox test
+      run: |
+        make tox
