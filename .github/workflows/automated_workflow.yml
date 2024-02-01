@@ -22,6 +22,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m flit install -s --env --deps=develop --symlink
-    - name: Check
+    - name: Test
       run: |
-        pytest tests
+        make test
+    - name: Format
+      run: |
+        make format
+    - name: Lint
+      run: |
+        make lint
+    - name: Secure
+      run: |
+        make secure
+    - name: Type_check
+      run: |
+        make type-check
