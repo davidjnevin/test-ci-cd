@@ -52,6 +52,10 @@ type-check:
 secure:
 	${PYTHON} -m bandit -r src --config pyproject.toml
 
+# target: coverage - Run coverage
+tox:
+	${PYTHON} coverage
+
 # target: tox - Run tox
 tox:
 	${PYTHON} tox
