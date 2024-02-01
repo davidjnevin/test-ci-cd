@@ -17,6 +17,7 @@ jobs:
     - name: Pip upgrade
       run: |
         pip install --upgrade pip
+        pip install coverage coverage-badge
     - name: Install flit
       run: |
         pip install flit
@@ -38,3 +39,8 @@ jobs:
     - name: Type_check
       run: |
         make type-check
+    - name: Coverage
+      run: |
+        make coverage
+    - name: Coverage Badge
+      run: coverage-badge -o coverage.svg
