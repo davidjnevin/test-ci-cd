@@ -52,3 +52,7 @@ type-check:
 secure:
 	${PYTHON} -m bandit -r src --config pyproject.toml
 
+# target: tox - Run tox
+tox:
+	${PYTHON} tox
+
