@@ -19,6 +19,7 @@ Home = "https://github.com/davidjnevin/test-ci-cd"
 
 [project.optional-dependencies]
 dev = [
+	"autoflake==2.2.1",
 	"bandit==1.7.7",
 	"coverage==7.4.1",
 	"flake8-bugbear==24.1.17",
@@ -35,8 +36,8 @@ dev = [
     ]
 
 test = [
-    "pytest",
-    "pytest-cov",
+    "pytest==8.0.0",
+    "pytest-cov==4.1.0",
 ]
 
 
