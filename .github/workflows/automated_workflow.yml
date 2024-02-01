@@ -22,7 +22,7 @@ jobs:
         pip install flit
     - name: Install dependencies
       run: |
-        flit install -s --env --deps=develop --symlink
+        python -m flit install -s --env --deps=develop --symlink
     - name: Test
       run: |
         make test
