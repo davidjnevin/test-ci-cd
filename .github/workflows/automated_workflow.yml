@@ -13,7 +13,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.9
-    - name: Install latest pip
+    - name: Pip upgrade
       run: |
         pip install --upgrade pip
     - name: Install flit
@@ -22,6 +22,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m flit install -s --env --deps=develop --symlink
-    - name: Check
+    - name: Test
       run: |
-        pytest tests
+        make test
+    - name: Format
+      run: |
+        make format
+    - name: Lint
+      run: |
+        make lint
+    - name: Secure
+      run: |
+        make secure
+    - name: Type_check
+      run: |
+        make type-check
