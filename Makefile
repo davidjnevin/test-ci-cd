@@ -54,7 +54,7 @@ secure:
 
 # target: coverage - Run coverage
 coverage:
-	${PYTHON} -m coverage
+	${PYTHON} -m coverage run -m pytest -svvv tests
 
 # target: tox - Run tox
 tox:
