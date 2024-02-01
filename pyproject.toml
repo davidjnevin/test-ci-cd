@@ -31,7 +31,7 @@ dev = [
     "isort==5.13.2",
     "isort==5.13.2",
     "pip-audit==2.7.0",
-    "pre-commit==3.6.0",,
+    "pre-commit==3.6.0",
     ]
 
 test = [
