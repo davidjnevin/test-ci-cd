@@ -53,7 +53,7 @@ secure:
 	${PYTHON} -m bandit -r src --config pyproject.toml
 
 # target: coverage - Run coverage
-tox:
+coverage:
 	${PYTHON} coverage
 
 # target: tox - Run tox
