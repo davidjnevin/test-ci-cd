@@ -14,7 +14,7 @@ Evolution:
 -   use caching to speed up builds
 -	Tox causes complications with caching the build (postponed)
 -	Display build success on repo readme <-- here now
--	Display test coverage on repro readme
+-	Display test coverage on repro readme ( first step I went with local solution, not ideal as not based on build)
 
 Goals:
 -	Testing
